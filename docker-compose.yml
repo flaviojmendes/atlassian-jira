@@ -1,10 +1,12 @@
 jira:
-  image: mhubig/atlassian-jira
+  image: flaviojmendes/atlassian-jira:6.3.3
   restart: always
   links:
     - database
   volumes:
     - home:/opt/jira-home
+  ports:
+    - 8080:8080
 
 database:
   image: postgres:9.4
